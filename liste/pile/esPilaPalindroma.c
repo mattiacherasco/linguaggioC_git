@@ -1,5 +1,5 @@
 /*
-author: Marco Giorgis
+author: Mattia Cherasco
 date: 13/11/2023
 es. lista 
 testo creazione di una lista
@@ -11,7 +11,7 @@ testo creazione di una lista
 
 typedef struct node
 {
-    int valore;
+    char valore;
     struct node* next;   
 }Node;
 
@@ -46,27 +46,34 @@ Node* pop(Node **head){
 void stampaPila(Node *head){
     Node* l=head;
     while (l!=NULL){
-        printf("%d ", l->valore);
+        printf("%s ", l->valore);
         l=l->next;
     }
 }
-
+void confrontaPal(Node *head){
+    Node* l=head;
+    Node* l=push(head, element);//cosi ho al contrario 
+    for(int k=0; k < strlen(head->valore); k++){
+        for (int j = strlen(head->valore); j = 0; j--){
+            if l->valore
+        }
+    }
+}
 int main(){
-    int n;
+    char* stringa;
     Node* head=NULL;
     Node* l;
-    do{
-        printf("inserire un numero naturale o -1 per terminare: ");
-        scanf("%d", &n);
-        if(n >= 0){
-            Node* element = (Node*) malloc(sizeof(Node));
-            element->valore=n;
-            push(&head, element);
-        }
-    }while(n>=0);
+    stringa = (char*) malloc (sizeof(char));
+    printf("inserire una stringa: ");
+    fflush(stdin);
+    scanf("%s", stringa);
+    for(int cont=0; cont < strlen(stringa); cont++){
+        Node* element = (Node*) malloc(sizeof(Node));
+        element->valore=stringa[cont];
+        push(&head, element);
+    }
     stampaPila(head);
-    Node *removed=pop(&head);
-    printf("&d\n", removed->valore);
+    confrontaPal(head);
     stampaPila(head);
     return 0;
 }
